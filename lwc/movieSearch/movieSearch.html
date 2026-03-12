@@ -1,0 +1,93 @@
+<template>
+
+    <!-- Intro Screen -->
+    <template lwc:if={showIntro}>
+        <div class="intro-screen">
+
+            <img src={bgImage} class="intro-bg"/>
+
+            <div class="intro-overlay">
+
+                <img src={logoImage} class="intro-logo"/>
+
+                <h1 class="intro-title">Movie Search</h1>
+
+            </div>
+
+        </div>
+    </template>
+
+
+<template lwc:else>
+    <div class="searchPanel">
+
+            <lightning-layout horizontal-align="center">
+
+                <lightning-layout-item padding="around-small" size="3">
+                    <lightning-combobox 
+                    class="lab"
+                        name="type"
+                        label="Type"
+                        value={selectedTypes}
+                        placeholder="Select Types..."
+                        options={options}
+                        onchange={handleChange}>
+                    </lightning-combobox>
+                </lightning-layout-item>
+
+                <lightning-layout-item padding="around-small" size="7">
+                    <lightning-input
+                        name="search"
+                        label="Search for Items"
+                        type="search"
+                        value={selectedSearch}
+                        placeholder="Search for Movies or Series"
+                        is-loading={loading}
+                        onchange={handleChange}>
+                    </lightning-input>
+                </lightning-layout-item>
+
+                <lightning-layout-item padding="around-small" size="2">
+                    <lightning-input
+                        name="pageno"
+                        label="Find Page"
+                        type="number"
+                        value={selectedPageno}
+                        placeholder="Search for Pageno"
+                        field-level-help="Range 1-100"
+                        min="1"
+                        max="100"
+                        step="1"
+                        message-when-step-underflow="Minimnum pageno 1"
+                        message-when-step-overflow="Maximum pageno 100"
+                        onchange={handleChange}>
+                    </lightning-input>
+                </lightning-layout-item>
+
+            </lightning-layout>
+
+    </div>
+    <!-- Display Section -->
+    <template lwc:if={displaySearchResult}>
+<div class="slds-var-m-top_large displayStyle slds-box">
+    <lightning-layout horizontal-align="center" multiple-rows="true">
+        <template for:each={searchResult} for:item="searchItem">
+            <lightning-layout-item
+    size="12"
+    small-device-size="6"
+    medium-device-size="4"
+    large-device-size="3"
+    padding="around_small"
+    key={searchItem.imdbID}
+            >
+                <c-display-page  movie={searchItem}
+    selected-movie-id={selectedMovie}
+    onselectedmovie={movieSelectedHandler}>
+    </c-display-page>
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+</div>
+    </template>
+
+</template>

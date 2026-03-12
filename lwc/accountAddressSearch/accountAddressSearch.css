@@ -1,0 +1,17 @@
+.container{
+display:flex;
+gap:20px;
+}
+
+.left{
+width:40%;
+}
+
+.right{
+width:60%;
+}
+
+.map{
+height:400px;
+width:100%;
+}

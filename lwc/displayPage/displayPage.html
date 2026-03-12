@@ -1,0 +1,15 @@
+<template>
+    <div class={displaySelected} onclick={clickHandler}>
+        <div class="innerDisplay">
+
+            <template if:true={movie.Poster}>
+                <img src={movie.Poster} alt={movie.Title}/>
+            </template>
+
+            <div class="lower-third">
+                <h1>{movie.Title}</h1>
+            </div>
+
+        </div>
+    </div>
+</template>

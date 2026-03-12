@@ -1,0 +1,28 @@
+<template>
+
+<lightning-card title="Google Map Address Finder">
+
+<div class="container">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+
+        <lightning-input
+            label="Enter Pin Code"
+            onchange={handlePinChange}>
+        </lightning-input>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+
+        <div class="map" lwc:dom="manual"></div>
+
+    </div>
+
+</div>
+
+</lightning-card>
+
+</template>

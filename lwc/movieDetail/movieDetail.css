@@ -1,0 +1,90 @@
+.container{
+    background:#111;
+    border-radius:14px;
+    padding:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.8);
+}
+
+/* Poster */
+.movie-poster img{
+    max-width:300px;
+    border-radius:10px;
+    border:3px solid #d4aa11;
+}
+
+/* Title */
+.movie-title{
+    font-size:28px;
+    color:#d4aa11;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+/* Movie Info */
+.movie-info{
+    color:#eee;
+    font-size:15px;
+    line-height:1.6;
+}
+
+/* Labels */
+.movie-info b{
+    color:#d4aa11;
+    font-style:italic;
+}
+
+/* Plot */
+.plot{
+    margin-top:10px;
+    max-width:450px;
+}
+
+.trailerBtn{
+    margin-top:15px;
+}
+
+.trailerBtn lightning-button{
+    --slds-c-button-brand-color-background:#aa831a;
+    --slds-c-button-brand-color-border:#f4c542;
+    --slds-c-button-text-color:#000;
+}
+
+/* Paragraph spacing */
+p{
+    margin:6px 0;
+}
+
+/* Lightning Icon spacing */
+lightning-icon{
+    margin-right:6px;
+}
+
+@media (max-width:768px){
+
+    .slds-grid{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .movie-poster{
+        margin-bottom:15px;
+        text-align:center;
+    }
+
+     .movie-poster img{
+        max-width:220px;
+        width:100%;
+        height:auto;
+    }
+
+     .movie-info{
+        text-align:left;
+        font-size:14px;
+    }
+
+    .movie-title{
+        text-align:center;
+        font-size:22px;
+    }
+
+}
